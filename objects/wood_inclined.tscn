@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://chr8ag5uqvla5"]
+
+[ext_resource type="PackedScene" uid="uid://3yuxff1xl0x2" path="res://models/props/platform-ramp.glb" id="1_dibxt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8hhkc"]
+size = Vector3(1, 0.190964, 1.06604)
+
+[node name="woodInclined" instance=ExtResource("1_dibxt")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="platform-ramp" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="platform-ramp/StaticBody3D" index="0"]
+transform = Transform3D(1, 9.61334e-05, -0.000413405, -0.000232381, 0.939063, -0.343745, 0.000355169, 0.343745, 0.939063, 4.88208e-05, 0.28405, 0.000794305)
+shape = SubResource("BoxShape3D_8hhkc")

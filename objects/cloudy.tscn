@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgf11inylk41m"]
+
+[ext_resource type="PackedScene" uid="uid://bsrmqj84lksd7" path="res://models/core_models/cloud.glb" id="1_2uaq5"]
+[ext_resource type="Script" path="res://objects/cloud.gd" id="2_boaq7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rt0pf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2yjwe"]
+size = Vector3(1, 0.939026, 1)
+
+[node name="cube" instance=ExtResource("1_2uaq5")]
+script = ExtResource("2_boaq7")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="cube2" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_rt0pf")
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube2/AnimatableBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.500336, 0)
+shape = SubResource("BoxShape3D_2yjwe")

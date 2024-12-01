@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck7sejbcbdbse"]
+
+[ext_resource type="PackedScene" uid="uid://ca3x0hnr25xhm" path="res://models/props/fence-straight.glb" id="1_1uihx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c560a"]
+size = Vector3(1, 0.364037, 0.124176)
+
+[node name="fence" instance=ExtResource("1_1uihx")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1.10063, 0, 0, 0, 1.10063, 0, 0, 0, 1.10063, 0, 0.201136, 0.417011)
+shape = SubResource("BoxShape3D_c560a")

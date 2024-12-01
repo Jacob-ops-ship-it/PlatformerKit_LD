@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnx8ugfr4wemq"]
+
+[ext_resource type="PackedScene" uid="uid://dvwlti6x17wjs" path="res://models/prototyping/models/shape-cube.glb" id="1_nk0h2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l87br"]
+albedo_color = Color(0.258764, 0.191712, 0.135944, 1)
+
+[node name="shape-cube2" instance=ExtResource("1_nk0h2")]
+
+[node name="shape-cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_l87br")

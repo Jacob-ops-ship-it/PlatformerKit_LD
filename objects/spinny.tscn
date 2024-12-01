@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8sgywvtnpjkw"]
+
+[ext_resource type="PackedScene" uid="uid://ecnegbkryjum" path="res://models/prototyping/models/shape-cylinder.glb" id="1_f5mfw"]
+[ext_resource type="PackedScene" uid="uid://cqdmicia4gklj" path="res://models/props/platform-fortified.glb" id="2_7wrjx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d3lvp"]
+height = 0.987814
+radius = 0.0803596
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rptca"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qyciv"]
+size = Vector3(0.174805, 2.49683, 2.50708)
+
+[node name="Spinny" type="Node3D"]
+transform = Transform3D(-0.999924, 0.0123391, 9.26861e-11, -0.0123355, -0.999641, -0.0238042, -0.000293721, -0.0238024, 0.999717, 5.38701, -21.8352, 37.9594)
+
+[node name="RopePart2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, -1.07138e-09, 0, 7.43512e-10, 1, 0, 0, -1.86265e-09, 1, 0, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+
+[node name="shape-cylinder2" parent="RopePart2" instance=ExtResource("1_f5mfw")]
+transform = Transform3D(0.05, 0, 0, 0, 1, 0, 0, 0, 0.05, 0, -0.458516, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RopePart2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0402098, 0)
+shape = SubResource("CylinderShape3D_d3lvp")
+
+[node name="PlatformPart" type="RigidBody3D" parent="."]
+transform = Transform3D(0.0394894, 0.00026401, 0.99922, -0.998991, 0.0213946, 0.0394748, -0.0213675, -0.999771, 0.00110861, 0.00739813, 1.04527, -0.044342)
+physics_material_override = SubResource("PhysicsMaterial_rptca")
+gravity_scale = 0.394
+
+[node name="platform-fortified3" parent="PlatformPart" instance=ExtResource("2_7wrjx")]
+transform = Transform3D(-1.11759e-07, -1, 0, 2.5, -4.47035e-08, 0, 0, 0, 2.5, 0.491841, -0.0643101, -0.00134659)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformPart"]
+transform = Transform3D(1, 0, -2.86847e-07, 0, 1, 0, 2.86847e-07, 0, 1, 0.373287, -0.0555496, -0.00109673)
+shape = SubResource("BoxShape3D_qyciv")
+
+[node name="HingeJoint3D2" type="HingeJoint3D" parent="."]
+transform = Transform3D(-0.999924, 0.00026401, -0.0123363, 0.012339, 0.0213946, -0.999695, 3.49246e-10, -0.999771, -0.0213962, -0.00303936, 0.499277, 0.00508118)
+node_a = NodePath("../RopePart2")
+node_b = NodePath("../PlatformPart")
+exclude_nodes_from_collision = false
+angular_limit/enable = true
+motor/enable = true
+motor/target_velocity = 3.49066
+motor/max_impulse = 1024.0
