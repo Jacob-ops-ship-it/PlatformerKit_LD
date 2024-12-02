@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://qm25tvs0sueo"]
+[gd_scene load_steps=3 format=3 uid="uid://cb0wweg1lvwsx"]
 
 [ext_resource type="PackedScene" uid="uid://d1igeo1rg06wj" path="res://models/props/crate-item-strong.glb" id="1_5fr3o"]
 
@@ -8,6 +8,8 @@ size = Vector3(0.52594, 0.560272, 1)
 [node name="CrateMovable" instance=ExtResource("1_5fr3o")]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." index="1"]
+collision_layer = 2
+collision_mask = 2
 mass = 0.001
 gravity_scale = 0.0
 

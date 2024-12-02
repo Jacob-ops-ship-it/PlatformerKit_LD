@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://euhogy2183se"]
+
+[ext_resource type="PackedScene" uid="uid://cte7gcfhvygfi" path="res://models/props/crate.glb" id="1_70h6e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qbg2m"]
+size = Vector3(0.502213, 0.498039, 0.498169)
+
+[node name="crate_movable2" instance=ExtResource("1_70h6e")]
+
+[node name="crate" parent="." index="0"]
+layers = 7
+
+[node name="RigidBody3D" type="RigidBody3D" parent="crate" index="0"]
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="crate/RigidBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014877, 0.250813, -0.00335693)
+shape = SubResource("BoxShape3D_qbg2m")

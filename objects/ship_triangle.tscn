@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwi6lhdfqxydj"]
+
+[ext_resource type="PackedScene" uid="uid://inum8mw70gn0" path="res://models/prototyping/models/shape-triangular-prism-low.glb" id="1_k711x"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wir7i"]
+data = PackedVector3Array(0, 0.5, -0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, 0, 0.5, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -0.5, 0, 0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0.5, 0, -0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, 0, 0.5, 0.5)
+
+[node name="shipTriangle" instance=ExtResource("1_k711x")]
+transform = Transform3D(-8.32836, -1.80806e-06, -6.4854e-16, 0, -9.04028e-07, 0.169714, -7.28089e-07, 20.6817, 7.41843e-09, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="shape-triangular-prism-low" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shape-triangular-prism-low/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_wir7i")
