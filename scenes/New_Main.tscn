@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://b813rs6uxy5r7"]
+[gd_scene load_steps=70 format=3 uid="uid://b813rs6uxy5r7"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_nki1l"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_pdu4a"]
@@ -51,6 +51,7 @@
 [ext_resource type="PackedScene" uid="uid://bco3mlfxtalti" path="res://objects/polefence.tscn" id="50_oxe13"]
 [ext_resource type="PackedScene" uid="uid://dbo0qa83t2heu" path="res://objects/wood_inclined_moving.tscn" id="51_e0yg3"]
 [ext_resource type="PackedScene" uid="uid://b8sgywvtnpjkw" path="res://objects/spinny.tscn" id="51_m0tcj"]
+[ext_resource type="PackedScene" uid="uid://ccm6vxk03fpo" path="res://objects/insidePlatform.tscn" id="51_wbtt5"]
 [ext_resource type="PackedScene" uid="uid://cg1orsmig3oxn" path="res://models/prototyping/models/indicator-square-c.glb" id="52_e0ic1"]
 [ext_resource type="PackedScene" uid="uid://qm25tvs0sueo" path="res://objects/crate_movable.tscn" id="52_jdrwx"]
 [ext_resource type="PackedScene" uid="uid://cjohjf4elt53r" path="res://models/prototyping/models/crate.glb" id="52_sydpi"]
@@ -296,6 +297,18 @@ transform = Transform3D(0.89145, 0, 0.453119, 0, 1, 0, -0.453119, 0, 0.89145, -6
 [node name="platform-falling8" parent="World" instance=ExtResource("14_pdbu2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9952, -18.671, 32.2339)
 
+[node name="platform-falling19" parent="World" instance=ExtResource("14_pdbu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29913, -29.4589, 95.7216)
+
+[node name="platform-falling20" parent="World" instance=ExtResource("14_pdbu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25196, -28.9162, 98.5435)
+
+[node name="platform-falling21" parent="World" instance=ExtResource("14_pdbu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12276, -28.1179, 101.355)
+
+[node name="platform-falling22" parent="World" instance=ExtResource("14_pdbu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47752, -27.5998, 103.504)
+
 [node name="GrassBlock6" parent="World" instance=ExtResource("11_b3rwh")]
 transform = Transform3D(-0.999755, 0, 0.0221464, 0, 1, 0, -0.0221464, 0, -0.999755, 10.9124, 1.71775, 10.8737)
 
@@ -518,10 +531,16 @@ transform = Transform3D(3.10163e-08, 8.92207e-07, 10.2639, 0.704634, -20.5543, 0
 transform = Transform3D(1.91068e-15, 7.94557e-07, 10.2639, 1, -7.94557e-07, 0, 4.37114e-08, 18.1773, -4.48648e-07, -0.14286, 9.3545, 52.5718)
 
 [node name="wall20" parent="World" instance=ExtResource("23_74kjk")]
-transform = Transform3D(1.91068e-15, 7.94557e-07, 10.2639, 1, -7.94557e-07, 0, 4.37114e-08, 18.1773, -4.48648e-07, -0.14286, -8.75878, 70.463)
+transform = Transform3D(1.91068e-15, 2.12694e-06, 10.2639, 1, -2.12694e-06, 0, 4.37114e-08, 48.6586, -4.48648e-07, -0.14286, -8.75878, 70.463)
 
 [node name="wall21" parent="World" instance=ExtResource("23_74kjk")]
 transform = Transform3D(1.91069e-15, 3.0542e-06, 10.2639, 1, -3.0542e-06, 0, 4.37114e-08, 69.872, -4.48648e-07, -0.14286, -30.2915, 63.7188)
+
+[node name="wall24" parent="World" instance=ExtResource("23_74kjk")]
+transform = Transform3D(-4.37076e-08, 2.26696e-09, 10.2639, 0.0131071, 3.95642, -3.01981e-14, -0.999914, 0.0518617, -4.48648e-07, -0.142857, -30.1471, 133.579)
+
+[node name="wall25" parent="World" instance=ExtResource("23_74kjk")]
+transform = Transform3D(4.37035e-08, 3.27803e-09, 10.2639, 0.0189531, -3.95605, -3.01981e-14, 0.99982, 0.0749929, -4.48648e-07, -0.142857, -19.0378, 133.598)
 
 [node name="wall22" parent="World" instance=ExtResource("23_74kjk")]
 transform = Transform3D(-4.37114e-08, 0, 10.2639, 0.341823, 11.4011, 1.53358e-07, -0.939764, 4.14697, -4.21623e-07, -0.14286, -25.1056, 65.7333)
@@ -731,7 +750,7 @@ transform = Transform3D(0.0342949, 0, 2.99972, 0, 3, 0, -2.49977, 0, 0.0411539, 
 transform = Transform3D(0.0342949, 0, 2.99972, 0, 3, 0, -2.49977, 0, 0.0411539, -16.5811, -22.1024, 32.3082)
 
 [node name="cube2" parent="World" instance=ExtResource("49_72wm4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 10.9856, -1.13015, -28.1855, 106.393)
+transform = Transform3D(12.1336, 0, 0, 0, 1, 0, 0, 0, 10.9856, 0.597139, -39.8116, 139.915)
 
 [node name="door3" parent="World" instance=ExtResource("13_2aebg")]
 transform = Transform3D(-0.0108122, 9.43971e-10, -0.998974, 1.31134e-07, 1.498, 0, 1.49996, -1.30956e-07, -0.00720091, 0.184904, -24.1336, 41.0818)
@@ -1341,6 +1360,30 @@ transform = Transform3D(-2.32537, 0, 0.00758931, 0, 1.95776, 0, -0.00758931, 0, 
 mesh = SubResource("TextMesh_882bv")
 skeleton = NodePath("../button2")
 surface_material_override/0 = SubResource("StandardMaterial3D_pt73i")
+
+[node name="insidePlatform" parent="." instance=ExtResource("51_wbtt5")]
+transform = Transform3D(8.853, 0, 0, 0, 4, 0, 0, 0, 2, -0.190964, -29.9967, 86.9533)
+
+[node name="insidePlatform4" parent="." instance=ExtResource("51_wbtt5")]
+transform = Transform3D(8.853, 0, 0, 0, 5.24895, 0, 0, 0, 0.353779, -0.190964, -29.9967, 105.436)
+
+[node name="insidePlatform2" parent="." instance=ExtResource("51_wbtt5")]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, 1.19487, -29.9967, 82.0724)
+
+[node name="insidePlatform5" parent="." instance=ExtResource("51_wbtt5")]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, 1.19487, -29.9967, 123.363)
+
+[node name="insidePlatform6" parent="." instance=ExtResource("51_wbtt5")]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, -1.48444, -29.0588, 126.073)
+
+[node name="insidePlatform7" parent="." instance=ExtResource("51_wbtt5")]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, 0.97109, -28.2691, 128.681)
+
+[node name="insidePlatform8" parent="." instance=ExtResource("51_wbtt5")]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, -0.248534, -27.364, 132.09)
+
+[node name="insidePlatform3" parent="." instance=ExtResource("51_wbtt5")]
+transform = Transform3D(2, 0, 0, 0, 2.6, 0, 0, 0, 2, -1.31044, -29.9967, 84.3167)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
