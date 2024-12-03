@@ -154,7 +154,7 @@ environment = ExtResource("1_nki1l")
 camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_pdu4a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.99225, -16.987, 35.2863)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.252957, 17.2072, -31.8197)
 collision_mask = 3
 floor_max_angle = 0.698132
 view = NodePath("../View")
